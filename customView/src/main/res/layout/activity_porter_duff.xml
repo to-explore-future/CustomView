@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.customview.activity.colorFilter.PorterDuffActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/iv_three_primary_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/three_primary_colors"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一个自定义view,主要是画了两个圆,可以改变圆的半径,画了
+            两个bitmap,colorFilter有三个子类第一个是:colorMatrixColorFilter,
+            这个类需要一个colorMatrix,colorMatrix是一个五列四行的一个数组,每行的对应的行数的列的位置保持为1,这样的colorMatrix能够够保证所画对象的不失真,每一行所对应的分别是RGBA,和图像的每一个象素值,经过一定的相乘相加运算,得出一个新的像素值,所以每一行的负数越多,那么这一行所对应的色值,就会向低处移动
+            第二个子类是lightingColorFilter,
+            "/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_radius_additon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="增加圆的半径"/>
+
+            <Button
+                android:id="@+id/btn_radius_subtraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="减小圆额半径"/>
+
+
+        </LinearLayout>
+
+        <com.example.customview.customview.colorFilterViewPackage.CustomView1
+            android:id="@+id/dc_draw_circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接着上一个自定义view,接下来是第三ColorFilter的子类:PorterDuffColorFilter"/>
+
+        <com.example.customview.customview.colorFilterViewPackage.CustomView2
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

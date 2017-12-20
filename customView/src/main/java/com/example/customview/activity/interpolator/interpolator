@@ -1,0 +1,3 @@
+
+插值器的顶级接口是 TimeInterpolator
+自定义插值器的话 就得继承 TimeInterpolator

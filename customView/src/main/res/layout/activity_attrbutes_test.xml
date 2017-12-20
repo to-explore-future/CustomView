@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.customview.activity.attrs_test.AttrbutesTestActivity">
+
+
+    <com.example.customview.customview.YTestView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:viewTextColor="@color/colorAccent"
+        app:viewText="我是中国人"
+        app:viewTextSize="40sp"
+        app:viewTextBg="@color/colorPrimary"
+        />
+</LinearLayout>

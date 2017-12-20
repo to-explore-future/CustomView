@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@color/grass_green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xfermod有三个子类,有两个已经过时,根本无法new其对象,那就看看能用的哪一个吧:PorterDuffXfermode.
+        porterDuff啥意思,查字典没有这个词,porter duff 这两个词是连个姓氏,原来porter和duff是两个人,他俩提出的关于图形图像理论,
+        所以才有了以他俩的名字为名字的类"
+            android:textAllCaps="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.说明:如果不设置Xfermode就只是单纯的覆盖\n2.如果设置了Xfermode,那么就根据不同的Xfermode的Mode的公式套公式计算即可\n3.再明确一点,设置了Xfermode的画笔只能更改还没有画出的图形(Src,包括Src盖住Dst右下角的那部分)\n4.通过观察为什么每个图片中都包含一样大小75%的黄色圆形呢?因为这个圆形是在设置Xfermode之前就画好的,这部分数据已经存在于内存中,在设置了Xfermode之后,不同的Mode会导致圆形的右下角的25%扇面的颜色数据与Src的颜色数据按照不同Mode的公式发生运算,所以设置了mode的画笔只有可能影响Dst右下角的25%的部分,所以每张图片中都已相同的75%的圆"/>
+
+
+    </LinearLayout>
+</ScrollView>

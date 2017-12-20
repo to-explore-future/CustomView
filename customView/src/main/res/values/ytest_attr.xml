@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 在这里面定义自定义view的xml属性值 -->
+
+    <!-- 所有的自定view的自定义属性对应什么样的值，定义在resourse根目录下面 -->
+    <!-- 书写要求:resources 里面可以包含多个自定义的view的属性，但是format不用写，写哪里呢，这些属性copy一份，写到resources根目录下
+     然后每个属性都要加上 format-->
+    <!-- 为什么要这么写 我猜：自定义view用xml写到布局文件中的时候，系统在解析自定义view属性的时候，首先会读取这个view都是用了那些属性
+    如果有父view的就去父view中去找，如果是自定义属性，就按照所给的路径（命名空间），去找这些属性，如果路径正确（命名空间），这个时候就
+    来到 declare-styleable 这个里面，去找对应的属性有没有，比如说:YTestView在xml布局文件中使用了两个 自定义属性：viewText ,viewTextColor
+    系统发现这里面确实定义了这两个属性，然后就去resources 根目录下去找属性定义的值的类型，就是这么个过程，-->
+    <!-- 为什么不把属性的值的类型写到 declare-styleable 中呢，我猜：自定义view在布局文件中用到的属性以及所给的值，
+    都会保存到R文件中（编译的时候保存的），当程序运行的时候呢，自定view就会解析这些属性，
+    在自定义view的构造方法中解析这些 用到的属性的时候，-->
+    <!-- 为什么要这么写 我猜：如果这么写view解析的时候回返回一个attributeSet，布局文件中使用的属性都在这里面而且都有值
+    如果只是在declare-styleable 中声明 但是没有在resources中声明，那么在解析返回的attributesSet的时候就解析不到值
+    这个时候就需要 针对这个属性 单独解析一次，比如说这样：mTextBg = a.getColor(R.styleable.YText_viewTextBg, Color.YELLOW); -->
+
+    <attr name="viewText" format="string"/>
+    <attr name="viewTextColor" format="color"/>
+    <attr name="viewTextSize" format="dimension"/>
+    <attr name="viewTextBg" format="color"/>
+    <!-- declare-styleable 这个是针对某个具体的view 定义这个view所独有的xml属性 -->
+    <declare-styleable name="YTestView">
+
+        <!-- 这里给这个YTestView 定义了 三个xml 属性 但是这三个属性 在这里面并没有指定 值的类型，这个值的类型一般放到resourse根目录下面-->
+        <attr name="viewText"/>
+        <attr name="viewTextColor"/>
+        <attr name="viewTextSize"/>
+
+        <!-- 不按照规矩写： -->
+        <attr name="viewTextBg" />
+       <!-- <attr name="viewTextBg" format="color"/> -->
+    </declare-styleable>
+</resources>

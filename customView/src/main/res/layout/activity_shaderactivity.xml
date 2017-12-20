@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shaderactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.customview.activity.shader.Shaderactivity">
+
+    <Button
+        android:id="@+id/btn_bitmap_shader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BitmapShader"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_bitmap_shader_demo_brick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BitmapShader的一个小demo"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_bitmap_shader_demo_girl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BitmapShader具体应用-图像倒影"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_linear_shader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LinearShader"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_linear_shader_demo_girl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LinearShader具体应用-更逼真的图像倒影"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_sweepGridient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第三个子类:sweepGridient"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_RadialGradient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第4个子类:radialGradient"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_RadialGradient_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="radialGradient,应用一下"
+        android:textAllCaps="false"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Matrix_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matrix应用在图片上-爱哥的"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_Matrix_imageView_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_Matrix_anim_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matrix矩阵第三行透视-animListView"
+        android:textAllCaps="false"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_draw_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制一张图"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

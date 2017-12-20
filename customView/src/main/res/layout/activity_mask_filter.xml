@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mask_filter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.customview.activity.colorFilter.MaskFilterActivity">
+
+
+
+    <Button
+        android:id="@+id/btn_maskfilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一个方块的几种阴影情况"/>
+
+    <Button
+        android:id="@+id/btn_picture_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一个方块的几种阴影情况"/>
+
+    <Button
+        android:id="@+id/btn_change_chocolate_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变阴影,是看起来像巧克力版"/>
+
+</LinearLayout>
