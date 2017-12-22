@@ -159,6 +159,19 @@ public class CustomView_Xfermode extends View {
 
         mPaint.setXfermode(porterDuffXfermode);
 
+        /**
+         * 设置 Xfermdoe 之后，到底发生了什么呢，
+         * 就是说 上面有一个 savelayer 的动作，保存之前绘制的图形和后面的代码没有关系，这个就好像是 你在一个本子上画画
+         * 画完一页之后呢 把这一页翻过去 saveLayer ，然后开始新的一页
+         * 这个 setXfermode 在这个新的一页中起作用，setXfermode 之前我 draw 了一个 circle ，设置 Xfermode 之后呢，我又要 draw 一个正方形
+         * 重点：这个时候 并不是直接把我要绘制的正方形直接绘制到屏幕上，而是-先要看看我设置 xfermode 之后的图形在画布中的区域，确定这个区域之后呢
+         * 看看这个这个区域在内存中已经存在的颜色，
+         * 现在的状态 ： 我将要绘制的区域已经存在的颜色 我知道，我将要在这个区域绘制的颜色我也知道了 一份区域有两份颜色，一份：已经存在的  另一份：我将要绘制的
+         * 这时候就要使用 xfermode 了，xfermode 就是一种颜色的运算法则，这个区域中每个像素已经存在的颜色和将要绘制的颜色怎么运算
+         * 计算机这时候就根据这个运算法则，把这个区域的已经存在的颜色和将要绘制的颜色 进行运算，运算完成之后得到一份新的颜色，
+         * 最后把这份新的颜色 绘制到这个区域
+         * 以上就是我对 xfermode 的最深刻的理解
+         */
         canvas.drawBitmap(mRectangle, 75f, 75f, mPaint);
         canvas.drawText("Src", 130f, 160f, mPaint);
         /**
