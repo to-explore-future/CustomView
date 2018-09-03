@@ -127,6 +127,8 @@
         </activity>
         <activity android:name=".activity.attrs_test.AttrbutesTestActivity">
         </activity>
+        <activity android:name=".activity.rotate.Rotate3dTest">
+        </activity>
     </application>
 
 </manifest>

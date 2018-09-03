@@ -30,6 +30,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     String TAG = "MainActivity";
     String TAG_CARD = "sdcard";
     private Button mAttrs;
+    private Button mRotateTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button mPagerTurnViewAiGe = (Button) findViewById(R.id.btn_pager_turnView_aige);
         Button mTurnViewBrokenLine = (Button) findViewById(R.id.btn_draw_broken_line_aige);
         mAttrs = (Button) findViewById(R.id.btn_attr);
+        mRotateTest = (Button) findViewById(R.id.imageview_rotate_test);
 
         porterDufferColorFilter.setOnClickListener(this);
         mNewActivityPlugin.setOnClickListener(this);
@@ -76,6 +78,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mPagerTurnView.setOnClickListener(this);
         mTurnViewBrokenLine.setOnClickListener(this);
         mAttrs.setOnClickListener(this);
+        mRotateTest.setOnClickListener(this);
+
     }
 
 
@@ -134,6 +138,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_attr:
                  startActivity(new Intent(this, AttrbutesTestActivity.class));
                  break;
+            case R.id.imageview_rotate_test:
+
+                break;
         }
     }
 

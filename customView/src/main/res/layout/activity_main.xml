@@ -171,6 +171,19 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/imageview_rotate_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片旋转练习"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>
