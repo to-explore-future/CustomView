@@ -37,7 +37,6 @@ public class XformodeAllModeActivity extends Activity {
         adapter.setOnItemClickListener(new OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, String data) {
-
                 showPopupWindow(view, data);
             }
         });
@@ -98,16 +97,16 @@ public class XformodeAllModeActivity extends Activity {
         textView.setText(data);
 
         //展示那个三角
-        ImageView imageView = new ImageView(this);
-        imageView.setImageResource(R.mipmap.indicator);
-        imageView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        int imageViewHeight = imageView.getMeasuredHeight();
-        Log.i("imageViewHeight", "imageViewHeight:" + imageViewHeight);
-        final PopupWindow popupWindowIndicator = new PopupWindow(imageView, ViewGroup.LayoutParams
-                .WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-        popupWindowIndicator.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor
-                .getHeight());
-        popupWindowIndicator.setFocusable(false);
+//        ImageView imageView = new ImageView(this);
+//        imageView.setImageResource(R.mipmap.indicator);
+//        imageView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+//        int imageViewHeight = imageView.getMeasuredHeight();
+//        Log.i("imageViewHeight", "imageViewHeight:" + imageViewHeight);
+//        final PopupWindow popupWindowIndicator = new PopupWindow(imageView, ViewGroup.LayoutParams
+//                .WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+//        popupWindowIndicator.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor
+//                .getHeight());
+//        popupWindowIndicator.setFocusable(false);
 
 
         PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams
@@ -118,7 +117,7 @@ public class XformodeAllModeActivity extends Activity {
         Log.i("Xformode", "popupWindowHeight:" + popupWindowHeight + "==popupWindowWidth" +
                 ":" + popupWindowWidth);
         popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor
-                .getHeight() + imageViewHeight);
+                .getHeight() /*+ imageViewHeight*/);
         popupWindow.setFocusable(false);
     }
 
