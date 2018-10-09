@@ -147,17 +147,11 @@ public class CustomView1 extends View {
                     paintStar.setColorFilter(starLightingColorFilter);
                 }
                 invalidate();
-
             }
         });
-
-
     }
 
-
     //自定义view 就要绘制,绘制工具 画笔,画布
-
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
