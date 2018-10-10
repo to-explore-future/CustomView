@@ -63,7 +63,6 @@ public class CustomView1 extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-
     private void initData(Context context) {
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
