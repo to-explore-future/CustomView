@@ -91,43 +91,25 @@ public class XformodeAllModeActivity extends Activity {
         int location[] = new int[2];
         anchor.getLocationOnScreen(location);
 
-        View contentView = View.inflate(XformodeAllModeActivity.this, R.layout.popupwindow_item,
-                null);
+        View contentView = View.inflate(XformodeAllModeActivity.this, R.layout.popupwindow_item, null);
         TextView textView = (TextView) contentView.findViewById(R.id.tv_popupwindown_item);
         textView.setText(data);
-
-        //展示那个三角
-//        ImageView imageView = new ImageView(this);
-//        imageView.setImageResource(R.mipmap.indicator);
-//        imageView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-//        int imageViewHeight = imageView.getMeasuredHeight();
-//        Log.i("imageViewHeight", "imageViewHeight:" + imageViewHeight);
-//        final PopupWindow popupWindowIndicator = new PopupWindow(imageView, ViewGroup.LayoutParams
-//                .WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-//        popupWindowIndicator.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor
-//                .getHeight());
-//        popupWindowIndicator.setFocusable(false);
-
 
         PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams
                 .WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         popupWindow.getContentView().measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         int popupWindowHeight = popupWindow.getContentView().getMeasuredHeight();
         int popupWindowWidth = popupWindow.getContentView().getMeasuredWidth();
-        Log.i("Xformode", "popupWindowHeight:" + popupWindowHeight + "==popupWindowWidth" +
-                ":" + popupWindowWidth);
-        popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor
-                .getHeight() /*+ imageViewHeight*/);
+        Log.i("Xformode", "popupWindowHeight:" + popupWindowHeight + "==popupWindowWidth" + ":" + popupWindowWidth);
+        popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] + anchor.getHeight() /*+ imageViewHeight*/);
         popupWindow.setFocusable(false);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
     }
 
-    //define interface
     interface OnRecyclerViewItemClickListener {
         void onItemClick(View view, String data);
     }
@@ -138,8 +120,7 @@ public class XformodeAllModeActivity extends Activity {
 
         @Override
         public MyRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(XformodeAllModeActivity.this).inflate(R.layout
-                    .recycleview_item, null);
+            View view = LayoutInflater.from(XformodeAllModeActivity.this).inflate(R.layout.recycleview_item, null);
             view.setTag(introduces[i++]);
             MyRecyclerViewHolder holder = new MyRecyclerViewHolder(view);
             view.setOnClickListener(this);
@@ -150,9 +131,7 @@ public class XformodeAllModeActivity extends Activity {
         public void onBindViewHolder(MyRecyclerViewHolder holder, int position) {
             myHolder = holder;
             myHolder.tv_name.setText(modeNames[position]);
-            myHolder.linearLayout.addView(new CustomView_Xfermode(XformodeAllModeActivity
-                    .this, modes[position]));
-
+            myHolder.linearLayout.addView(new CustomView_Xfermode(XformodeAllModeActivity.this, modes[position]));
         }
 
         @Override

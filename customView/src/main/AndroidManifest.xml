@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.customview">
+    package="com.example.customview">
 
     <application
         android:allowBackup="true"
@@ -10,125 +10,71 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.colorFilter.PorterDuffActivity">
-        </activity>
-        <activity android:name=".activity.Xformode.XformodeAllModeActivity">
-        </activity>
-        <activity android:name=".activity.Xformode.BeautifulGirlExampleActivity">
-        </activity>
-        <activity android:name=".activity.eraser.EraserXfermodeActivity">
-        </activity>
-        <activity android:name=".activity.eraser.EraserSetPixelActivity">
-        </activity>
-        <activity android:name=".activity.path.PathExampleActivity">
-        </activity>
+        <activity android:name=".activity.colorFilter.PorterDuffActivity" />
+        <activity android:name=".activity.Xformode.XformodeAllModeActivity" />
+        <activity android:name=".activity.Xformode.BeautifulGirlExampleActivity" />
+        <activity android:name=".activity.eraser.EraserXfermodeActivity" />
+        <activity android:name=".activity.eraser.EraserSetPixelActivity" />
+        <activity android:name=".activity.path.PathExampleActivity" />
         <activity
             android:name=".activity.Main2Activity"
-            android:label="@string/title_activity_main2">
-        </activity>
-        <activity android:name=".activity.path.PathDemoActivity">
-        </activity>
-        <activity android:name=".activity.path.RevolveAroundSunActivity">
-        </activity>
-        <activity android:name=".activity.QRcode.QRCodeActivity">
-        </activity>
-        <activity android:name=".activity.text.TextTestActivity">
-        </activity>
-        <activity android:name=".activity.colorFilter.MaskFilterActivity">
-        </activity>
-        <activity android:name=".activity.colorFilter.BlurMaskFilterActivity">
-        </activity>
-        <activity android:name=".activity.colorFilter.EmbossMaskFilterActivity">
-        </activity>
-        <activity android:name=".activity.path.PathEffectActivity">
-        </activity>
-        <activity android:name=".activity.Xformode.XformodeActivity">
-        </activity>
-        <activity android:name=".activity.eraser.EraserActivity">
-        </activity>
-        <activity android:name=".activity.path.PathActivity">
-        </activity>
-        <activity android:name=".activity.colorFilter.MaskFilterViewActivity">
-        </activity>
-        <activity android:name=".activity.shader.Shaderactivity">
-        </activity>
-        <activity android:name=".activity.shader.BitmapShaderActivity">
-        </activity>
-        <activity android:name=".activity.twoWay2StartActivity.Two2StartActivity">
-        </activity>
-        <activity android:name=".activity.twoWay2StartActivity.Activity02">
-        </activity>
-        <activity android:name=".activity.shader.BitmapShaderDemoActivity">
-        </activity>
-        <activity android:name=".activity.shader.LinearSharderActivity">
-        </activity>
-        <activity android:name=".activity.shader.LinearShaderDemoActivity">
-        </activity>
-        <activity android:name=".activity.shader.LinearShaderDemoGirlActivity">
-        </activity>
-        <activity android:name=".activity.shader.SweepGradientActivity">
-        </activity>
-        <activity android:name=".activity.shader.RedialGradientActivity">
-        </activity>
-        <activity android:name=".activity.Xformode.DreamEffectActivity">
-        </activity>
-        <activity android:name=".activity.shader.MatrixImageViewActivity">
-        </activity>
-        <activity android:name=".activity.shader.MyMatrixImageViewActivity">
-        </activity>
-        <activity android:name=".activity.shader.AnimListViewActivity">
-        </activity>
-        <activity android:name=".activity.interpolator.InterpolatorActivity">
-        </activity>
-        <activity android:name=".activity.shader.DrawAPictureActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasActivity">
-        </activity>
-        <activity android:name=".activity.canvas.BigBosomsGirlActivity">
-        </activity>
-        <activity android:name=".activity.canvas.BitmapMeshActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasSizeActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasClipActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasClipActivity2">
-        </activity>
-        <activity android:name=".activity.path.WaveViewActivity">
-        </activity>
-        <activity android:name=".activity.canvas.SnowActivity">
-        </activity>
-        <activity android:name=".activity.canvas.MySnowActivity">
-        </activity>
-        <activity android:name=".activity.path.PathLineActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CCWActivity">
-        </activity>
-        <activity android:name=".activity.canvas.BrokenLineActivity">
-        </activity>
-        <activity android:name=".activity.canvas.RegionViewActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasSomeActivity">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasSomeActivity2">
-        </activity>
-        <activity android:name=".activity.canvas.CanvasSomeActivity3">
-        </activity>
-        <activity android:name=".activity.pagerTurn.PagerTurnViewActivity">
-        </activity>
-        <activity android:name=".activity.pagerTurn.PagerTurnViewAiGeActivity">
-        </activity>
-        <activity android:name=".activity.pagerTurn.PagerTurnViewBrokenLineActivity">
-        </activity>
-        <activity android:name=".activity.attrs_test.AttrbutesTestActivity">
-        </activity>
-        <activity android:name=".activity.rotate.Rotate3dTest">
-        </activity>
+            android:label="@string/title_activity_main2" />
+        <activity android:name=".activity.path.PathDemoActivity" />
+        <activity android:name=".activity.path.RevolveAroundSunActivity" />
+        <activity android:name=".activity.QRcode.QRCodeActivity" />
+        <activity android:name=".activity.text.TextTestActivity" />
+        <activity android:name=".activity.colorFilter.MaskFilterActivity" />
+        <activity android:name=".activity.colorFilter.BlurMaskFilterActivity" />
+        <activity android:name=".activity.colorFilter.EmbossMaskFilterActivity" />
+        <activity android:name=".activity.path.PathEffectActivity" />
+        <activity android:name=".activity.Xformode.XformodeActivity" />
+        <activity android:name=".activity.eraser.EraserActivity" />
+        <activity android:name=".activity.path.PathActivity" />
+        <activity android:name=".activity.colorFilter.MaskFilterViewActivity" />
+        <activity android:name=".activity.shader.Shaderactivity" />
+        <activity android:name=".activity.shader.BitmapShaderActivity" />
+        <activity android:name=".activity.twoWay2StartActivity.Two2StartActivity" />
+        <activity android:name=".activity.twoWay2StartActivity.Activity02" />
+        <activity android:name=".activity.shader.BitmapShaderDemoActivity" />
+        <activity android:name=".activity.shader.LinearSharderActivity" />
+        <activity android:name=".activity.shader.LinearShaderDemoActivity" />
+        <activity android:name=".activity.shader.LinearShaderDemoGirlActivity" />
+        <activity android:name=".activity.shader.SweepGradientActivity" />
+        <activity android:name=".activity.shader.RedialGradientActivity" />
+        <activity android:name=".activity.Xformode.DreamEffectActivity" />
+        <activity android:name=".activity.shader.MatrixImageViewActivity" />
+        <activity android:name=".activity.shader.MyMatrixImageViewActivity" />
+        <activity android:name=".activity.shader.AnimListViewActivity" />
+        <activity android:name=".activity.interpolator.InterpolatorActivity" />
+        <activity android:name=".activity.shader.DrawAPictureActivity" />
+        <activity android:name=".activity.canvas.CanvasActivity" />
+        <activity android:name=".activity.canvas.BigBosomsGirlActivity" />
+        <activity android:name=".activity.canvas.BitmapMeshActivity" />
+        <activity android:name=".activity.canvas.CanvasSizeActivity" />
+        <activity android:name=".activity.canvas.CanvasClipActivity" />
+        <activity android:name=".activity.canvas.CanvasClipActivity2" />
+        <activity android:name=".activity.path.WaveViewActivity" />
+        <activity android:name=".activity.canvas.SnowActivity" />
+        <activity android:name=".activity.canvas.MySnowActivity" />
+        <activity android:name=".activity.path.PathLineActivity" />
+        <activity android:name=".activity.canvas.CCWActivity" />
+        <activity android:name=".activity.canvas.BrokenLineActivity" />
+        <activity android:name=".activity.canvas.RegionViewActivity" />
+        <activity android:name=".activity.canvas.CanvasSomeActivity" />
+        <activity android:name=".activity.canvas.CanvasSomeActivity2" />
+        <activity android:name=".activity.canvas.CanvasSomeActivity3" />
+        <activity android:name=".activity.pagerTurn.PagerTurnViewActivity" />
+        <activity android:name=".activity.pagerTurn.PagerTurnViewAiGeActivity" />
+        <activity android:name=".activity.pagerTurn.PagerTurnViewBrokenLineActivity" />
+        <activity android:name=".activity.attrs_test.AttrbutesTestActivity" />
+        <activity android:name=".activity.rotate.Rotate3dTest" />
+        <activity android:name=".activity.Xformode.AvoidXFermodeActivity" />
+        <activity android:name=".activity.Xformode.DrawAlarmClockActivity"></activity>
     </application>
 
 </manifest>

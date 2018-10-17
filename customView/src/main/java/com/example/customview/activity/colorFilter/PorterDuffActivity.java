@@ -38,7 +38,6 @@ public class PorterDuffActivity extends Activity implements View.OnClickListener
             case R.id.btn_radius_subtraction:
                 drawCircle.setRadius(radius -= 20);
                 break;
-
         }
     }
 

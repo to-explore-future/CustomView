@@ -97,35 +97,26 @@ public class CustomView_Xfermode extends View {
         int m = -1;
         //切记for循环中千万不要做运算,把所有的运算拿出来,做成变量,直接在for循环中赋值,提高效率
         for (int row = 0; row < 11; row++) {
-
             for (int i = 0; i < 20; i++) {                  //每一行由20个像素
-
                 for (int column = 0; column < 11; column++) {
-
                     for (int j = 0; j < 20; j++) {          //每一个列也有20个像素
-
                         if (row % 2 > 0) {                  //如果行数是个奇数,首先显示白色方框
-
                             if (column % 2 > 0) {           //在行数为奇数的情况下,如果列数为奇数,就真的该显示白色方框了
                                 background_rect[++m] = white;
                             } else {                        //                      列数为偶数,显示灰色
                                 background_rect[++m] = gray;
                             }
-
                         } else {                            //剩下行,首先显示灰色方框
-
                             if (column % 2 > 0) {           //在行数为偶数的情况下,如果列数为奇数,就真的该显示白色方框了
                                 background_rect[++m] = gray;
                             } else {                        //                      列数为偶数,显示灰色
                                 background_rect[++m] = white;
                             }
                         }
-
                     }
                 }
             }
         }
-
     }
 
     @Override
@@ -139,15 +130,12 @@ public class CustomView_Xfermode extends View {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         //draw方法会调用onDraw方法,但是android建议 尽量不要重写 draw方法,
-
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-//        int colors[] = ColorTransformUtils.int_colorToARGB(Color.parseColor("#7FB446"));
-//        canvas.drawARGB(colors[0], colors[first], colors[second], colors[3]);
         canvas.drawBitmap(mBack_Rectangle, 0f, 0f, mPaint);
         //绘制一个rectangle边框,
         canvas.drawRect(0f, 0f, 220f, 220f, mPaint_OutRectangle);

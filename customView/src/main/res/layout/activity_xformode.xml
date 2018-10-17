@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_xformode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.example.customview.activity.Xformode.XformodeActivity">
 
     <Button
         android:id="@+id/btn_show_knowledge_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="展示知识点"/>
+        android:text="展示知识点" />
 
     <Button
         android:id="@+id/btn_girl_demo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="运用知识点-美女p图"/>
+        android:text="运用知识点-美女p图" />
 
     <Button
         android:id="@+id/btn_xformode_colorFilter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="xformode_colorFilter综合运用"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/draw_a_alarm_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="运用知识点，画一个闹钟" />
+
 
 </LinearLayout>
