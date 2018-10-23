@@ -1,10 +1,13 @@
 package com.example.customview.customview.MaskFilterViewPackage;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +16,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
+import com.example.customview.R;
 import com.example.customview.utils.GetScreenWH;
 
 /**
@@ -29,6 +33,9 @@ public class MaskFilterView extends View {
     private Paint textPaint;
     private String[] texts;
     private int position;
+    private Bitmap beautifulGirlBitmap;
+    private Rect rect;
+    private Bitmap scaledBitmap;
 
     public MaskFilterView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -67,13 +74,14 @@ public class MaskFilterView extends View {
         textPaint.setTextSize(80);
 
         rectF = new RectF(200, 600, 800, 1400);
+        rect = new Rect(200, 600, 800, 1400);
 
         new Thread() {
             @Override
             public void run() {
                 for (int i = 1; i < 1000; i++) {
                     try {
-                        Thread.sleep(2000);
+                        Thread.sleep(4000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -88,6 +96,9 @@ public class MaskFilterView extends View {
             }
         }.start();
 
+        beautifulGirlBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.beautiful);
+        scaledBitmap = Bitmap.createScaledBitmap(beautifulGirlBitmap, 600, 800, true);
+
 
     }
 
@@ -101,7 +112,8 @@ public class MaskFilterView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(rectF, paint);
-        canvas.drawText(texts[position%4],canvas.getWidth()/2,screenH/2,textPaint);
+//        canvas.drawRect(rectF, paint);
+        canvas.drawBitmap(scaledBitmap,100,100,paint);
+        canvas.drawText(texts[position % 4], canvas.getWidth() / 2, screenH / 2, textPaint);
     }
 }

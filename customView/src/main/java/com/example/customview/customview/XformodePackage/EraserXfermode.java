@@ -45,7 +45,7 @@ public class EraserXfermode extends View {
         mPath = new Path();
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);//第二个参数是防抖动的
-        mPaint.setARGB(254, 123, 123, 123);
+        mPaint.setARGB(0, 123, 123, 123);
 
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         mPaint.setStyle(Paint.Style.STROKE);
@@ -77,7 +77,6 @@ public class EraserXfermode extends View {
         super.onDraw(canvas);
         canvas.drawBitmap(bgBitmap, 0, 0, null);
         canvas.drawBitmap(fgBitmap, 0, 0, null);
-        //??
         mCanvas.drawPath(mPath, mPaint);
     }
 
@@ -99,7 +98,8 @@ public class EraserXfermode extends View {
                 float dx = Math.abs(x - preX);
                 float dy = Math.abs(y - preY);
                 if (dx >= MIN_MOVE_DIS || dy >= MIN_MOVE_DIS) {
-                    mPath.quadTo(preX, preY, (x + preX) / 2, (y + preY) / 2);
+                    mPath.quadTo(preX, preY, (x + preX) / 2, (y + preY) / 2);//使用 bezier 绘制path
+//                    mPath.lineTo(x, y);  //用连接直线的方式 绘制path
                     preX = x;
                     preY = y;
                 }

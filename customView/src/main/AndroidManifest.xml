@@ -74,7 +74,9 @@
         <activity android:name=".activity.attrs_test.AttrbutesTestActivity" />
         <activity android:name=".activity.rotate.Rotate3dTest" />
         <activity android:name=".activity.Xformode.AvoidXFermodeActivity" />
-        <activity android:name=".activity.Xformode.DrawAlarmClockActivity"></activity>
+        <activity android:name=".activity.Xformode.DrawAlarmClockActivity" />
+        <activity android:name=".activity.text.DrawTextActivity" />
+        <activity android:name=".activity.text.TypeFaceActivity"></activity>
     </application>
 
 </manifest>

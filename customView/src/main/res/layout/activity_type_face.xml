@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.text.TypeFaceActivity">
+
+    <TextView
+        android:id="@+id/activity_type_face_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关关雎鸠，在河之洲。窈窕淑女，君子好逑。
+参差荇菜，左右流之。窈窕淑女，寤寐求之。
+求之不得，寤寐思服。悠哉悠哉，辗转反侧。
+参差荇菜，左右采之。窈窕淑女，琴瑟友之。
+参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android系统自带的字体sans"
+        android:typeface="sans" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android系统自带的字体monospace"
+        android:typeface="monospace" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android系统自带的字体serif"
+        android:typeface="serif" />
+
+
+</LinearLayout>

@@ -8,7 +8,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Xfermode;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -22,8 +21,8 @@ public class DrawAlarmClockView extends View {
     private Rect bgRect;
     private int bgRectX = 0;
     private int bgRectY = 0;
-    private int bgRectHeight = 300;
-    private int bgRectWidht = 300;
+    private int bgRectHeight = 500;
+    private int bgRectWidht = 500;
     private Paint alarmPaint;
     private int alarmCircleR; //白色耳朵的半径
     private int leftAlarmCircleX;
@@ -108,7 +107,6 @@ public class DrawAlarmClockView extends View {
 //        alarmPaint.setXfermode(null);
 
         canvas.drawArc(arcRectF, 0, 360, true, arcPaint);
-
 
         canvas.restoreToCount(bgRectLayer);
     }
