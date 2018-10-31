@@ -16,8 +16,8 @@ public class EmbossMaskFilterActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_emboss_mask_filter);
-        mLightState = (TextView) findViewById(R.id.tv_light_state);
-        EmbossMaskFilterView mEmbossView = (EmbossMaskFilterView) findViewById(R.id.emf_embossMaskFilterView);
+        mLightState = findViewById(R.id.tv_light_state);
+        EmbossMaskFilterView mEmbossView = findViewById(R.id.emf_embossMaskFilterView);
         mEmbossView.setLightState(new LightStateCallBack());
     }
 

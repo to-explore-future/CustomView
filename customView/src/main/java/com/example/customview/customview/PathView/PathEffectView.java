@@ -17,6 +17,7 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.View;
 
+
 /**
  * Created by to-explore-future on 2017/second/14
  * 这个类 画几条折现
@@ -27,18 +28,25 @@ public class PathEffectView extends View {
     private Paint paint;
     private Path path;
     private PathEffect[] mPathEffects;
-    private Handler handler = new Handler(){
+
+    private MyHandler myHandler = new MyHandler(this);
+
+    public static class MyHandler extends Handler{
+
+        private PathEffectView pathEffectView;
+
+        public MyHandler(PathEffectView pathEffectView) {
+            this.pathEffectView = pathEffectView;
+        }
+
         @Override
         public void handleMessage(Message msg) {
-            if (times < 30) {
-
-                invalidate();
-                times++;
+            if (pathEffectView.times < 30) {
+                pathEffectView.invalidate();
+                pathEffectView.times++;
             }
-
         }
-    };
-
+    }
 
     public PathEffectView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -61,7 +69,6 @@ public class PathEffectView extends View {
 
         mPathEffects[5] = new ComposePathEffect(mPathEffects[2], mPathEffects[4]);
         mPathEffects[6] = new SumPathEffect(mPathEffects[4], mPathEffects[3]);
-
     }
 
     private void initPath() {
@@ -73,7 +80,6 @@ public class PathEffectView extends View {
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5);
-
     }
 
     @Override
@@ -89,6 +95,6 @@ public class PathEffectView extends View {
             canvas.drawPath(path, paint);
             canvas.translate(0, 250);
         }
-        handler.sendEmptyMessageDelayed(0,500);
+        myHandler.sendEmptyMessageDelayed(0,500);
     }
 }

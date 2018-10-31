@@ -11,11 +11,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.example.customview.activity.colorFilter.EmbossMaskFilterActivity;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 /**
@@ -30,20 +30,31 @@ public class EmbossMaskFilterView extends View {
     private float lightSourceY = 1;
     private float lightSourceX = (float) Math.tan(89 * Math.PI / 180);
     private float lightSourceZ = 1;
-    private Handler handler = new Handler() {
+
+    private Handler handler = new MyHandler(new WeakReference<EmbossMaskFilterView>(this));
+
+    private static class MyHandler extends Handler {
+
+        private WeakReference<EmbossMaskFilterView> mView;
+        private EmbossMaskFilterView embossMaskFilterView;
+        private EmbossMaskFilterActivity.LightStateCallBack lightState;
+
+        public MyHandler(WeakReference<EmbossMaskFilterView> mView) {
+            this.mView = mView;
+            embossMaskFilterView = mView.get();
+        }
+
         @Override
         public void handleMessage(Message msg) {
             if (msg.obj != null) {
-
-                Log.i("obj", "obj:" + msg.obj.toString());
+                lightState = embossMaskFilterView.getLightState();
                 lightState.changeState(msg.obj.toString());
-
             } else {
-                invalidate();
+                embossMaskFilterView.invalidate();
             }
-
         }
-    };
+    }
+
     private float[] direction;
     private EmbossMaskFilterActivity.LightStateCallBack lightState;
 
@@ -64,7 +75,6 @@ public class EmbossMaskFilterView extends View {
         rectfs = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
-
                 rectF = new RectF(200 * j, 200 * (i + 1), 200 * j + 200, 200 * (i + 1) + 200);
                 rectfs.add(rectF);
             }
@@ -104,17 +114,13 @@ public class EmbossMaskFilterView extends View {
                     lightSourceX = (float) (Math.tan((i + 1) * Math.PI / 180) * lightSourceY);
                     handler.sendEmptyMessage(0);
                 }
-
-
             }
         }.start();
-
     }
 
     private void initPaint() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
         //让刚开始的时候:照射光源在紧贴地平线的地方,x,y的tan角度接近于90度这个时候x无限大,y是1
-
         paint.setColor(Color.RED);
     }
 
@@ -131,12 +137,15 @@ public class EmbossMaskFilterView extends View {
         paint.setMaskFilter(new EmbossMaskFilter(direction, 0.1f, 10f, 20f));
 
         for (int i = 0; i < 20; i++) {
-
             canvas.drawRect(rectfs.get(i), paint);
         }
     }
 
     public void setLightState(EmbossMaskFilterActivity.LightStateCallBack lightState) {
         this.lightState = lightState;
+    }
+
+    public EmbossMaskFilterActivity.LightStateCallBack getLightState() {
+        return this.lightState;
     }
 }

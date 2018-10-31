@@ -25,4 +25,6 @@
 
     <drawable name="pressed_gray">#0c000000</drawable>
     <drawable name="selected_gray">#2c000000</drawable>
+
+    <color name="alpha_transparent">#66ffffff</color>
 </resources>

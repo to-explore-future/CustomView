@@ -46,7 +46,6 @@ public class BlurMaskFilterView extends View {
     private void initBitmap() {
         bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.sun);
         alphaBitmap = bitmap.extractAlpha();
-
     }
 
     private void initPaint() {
@@ -66,10 +65,10 @@ public class BlurMaskFilterView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(alphaBitmap,200,400,alphaPaint);
+        canvas.drawBitmap(alphaBitmap, 200, 400, alphaPaint);
 
-        canvas.drawBitmap(bitmap,200,400, paint);
+        canvas.drawBitmap(bitmap, 200, 400, paint);
 
-        canvas.drawBitmap(bitmap,600,400, paint);
+        canvas.drawBitmap(bitmap, 600, 400, paint);
     }
 }

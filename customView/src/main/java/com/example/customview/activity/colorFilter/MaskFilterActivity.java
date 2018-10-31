@@ -15,9 +15,9 @@ public class MaskFilterActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mask_filter);
 
-        Button mMaskFilter = (Button) findViewById(R.id.btn_maskfilter);
-        Button mPictureShadow = (Button) findViewById(R.id.btn_picture_shadow);
-        Button mChangeChocolateShadow = (Button) findViewById(R.id.btn_change_chocolate_shadow);
+        Button mMaskFilter = findViewById(R.id.btn_maskfilter);
+        Button mPictureShadow = findViewById(R.id.btn_picture_shadow);
+        Button mChangeChocolateShadow = findViewById(R.id.btn_change_chocolate_shadow);
 
         mMaskFilter.setOnClickListener(this);
         mPictureShadow.setOnClickListener(this);
@@ -38,5 +38,13 @@ public class MaskFilterActivity extends Activity implements View.OnClickListener
                 startActivity(new Intent(this, EmbossMaskFilterActivity.class));
                 break;
         }
+    }
+
+    /**
+     *
+     * @param view
+     */
+    public void drawViewShadow(View view) {
+        startActivity(new Intent(this,ViewShadowActivity.class));
     }
 }

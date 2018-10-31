@@ -83,9 +83,9 @@ public class RegionView extends View {
 
         canvas.save();
 
-        canvas.clipRegion(region1);
-
-        canvas.clipRegion(region2, types[position % types.length]);
+//        canvas.clipRegion(region1);
+//
+//        canvas.clipRegion(region2, types[position % types.length]);
 
         canvas.drawColor(Color.RED);
 
