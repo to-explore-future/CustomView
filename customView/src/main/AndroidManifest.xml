@@ -77,7 +77,8 @@
         <activity android:name=".activity.Xformode.DrawAlarmClockActivity" />
         <activity android:name=".activity.text.DrawTextActivity" />
         <activity android:name=".activity.text.TypeFaceActivity" />
-        <activity android:name=".activity.colorFilter.ViewShadowActivity"></activity>
+        <activity android:name=".activity.colorFilter.ViewShadowActivity" />
+        <activity android:name=".activity.path.ECGActivity"></activity>
     </application>
 
 </manifest>
